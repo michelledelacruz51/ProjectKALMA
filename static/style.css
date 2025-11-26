@@ -1,0 +1,167 @@
+/* GENERAL PAGE BACKGROUND */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background: linear-gradient(135deg, #1e91d4, #5a0f0f);
+    background-attachment: fixed;
+    color: rgb(0, 0, 0);
+}
+
+/* LAYOUT SHELL */
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar-min {
+    width: 72px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(6px);
+    border-right: 1px solid rgba(255, 255, 255, 0.04);
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12px;
+}
+
+.sidebar-min .nav-btn {
+    width: 100%;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+}
+
+.sidebar-min .nav-btn:hover {
+    background: rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+}
+
+.sidebar-min .nav-btn svg {
+    width: 22px;
+    height: 22px;
+    opacity: 0.95;
+}
+
+/* MAIN AREA */
+.main-area {
+    flex: 1;
+    padding: 22px;
+}
+
+/* TOPBAR */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.greeting {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffb3b3;
+}
+
+.motivation-pill {
+    background: rgba(255, 255, 255, 0.10);
+    padding: 8px 12px;
+    border-radius: 999px;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+/* STAT CARDS */
+.cards-row {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    flex: 1 1 180px;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.stat-card h6 { margin: 0; color: #000000; font-weight: 700; }
+.stat-big { font-size: 1.6rem; font-weight: 800; color: #000000; margin-top: 6px; }
+
+/* GRID: TASKS + ADD TASK */
+.board { display: grid; grid-template-columns: 1.18fr 0.82fr; gap: 18px; align-items: start; }
+
+/* TASK LIST CARD */
+.tasks-card { background: rgba(255, 255, 255, 0.06); padding: 18px; border-radius: 12px; min-height: 300px; }
+
+/* ADD TASK PANEL */
+.add-task-card { background: rgba(255, 255, 255, 0.06); padding: 18px; border-radius: 12px; min-height: 200px; }
+
+/* INDIVIDUAL TASK ITEM */
+.task-item { display: flex; justify-content: space-between; gap: 12px; padding: 10px; border-radius: 10px; background: rgba(255,255,255,0.02); margin-bottom: 10px; align-items: center; }
+.task-meta { color: #ddd; font-size: 0.9rem; }
+.task-actions a { margin-left: 6px; }
+
+/* FORMS */
+input, select { border-radius: 6px; }
+
+/* RESPONSIVE FIX */
+@media (max-width: 900px) {
+    .board { grid-template-columns: 1fr; }
+    .sidebar-min { display: none; }
+    .main-area { padding: 14px; }
+}
+
+/* -----------------------------------------
+   DASHBOARD — MATCH INTRO PAGE AESTHETIC
+------------------------------------------*/
+
+/* Dashboard background */
+.dashboard-bg {
+    background: url('/static/bsu.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: static;
+    min-height: 100vh;
+}
+
+/* Soft red transparent overlay */
+.dashboard-bg::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(150, 40, 40, 0.35);
+    backdrop-filter: blur(2px);
+    z-index: 0;
+}
+
+/* Make dashboard content visible above overlay */
+.app-shell { position: relative; z-index: 2; }
+
+/* Glass cards */
+.stat-card, .tasks-card, .add-task-card {
+    background: rgba(255,255,255,0.2) !important;
+    backdrop-filter: blur(20px);
+}
+
+/* small style for the HR divider */
+.soft-hr { border: 0; border-top: 1px solid rgba(255,255,255,0.06); margin: 12px 0; }
+
+@media (max-width: 900px) {
+    .board {
+        grid-template-columns: 1fr; /* stack tasks and add task vertically */
+    }
+
+    .add-task-card .stat-card {
+        margin-top: 20px;
+    }
+}
