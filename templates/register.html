@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
     <style>
-        .register-container {
+        .login-container {
             position: relative;
             z-index: 2;
             height: 100vh;
@@ -17,18 +17,18 @@
             padding: 20px;
         }
 
-        .register-card {
+        .login-card {
             background: rgb(208, 221, 220);
             backdrop-filter: blur(10px);
             padding: 40px;
             border-radius: 15px;
-            width: 400px;
+            width: 380px;
             border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
             animation: fadeIn 1s ease-out;
         }
 
-        .register-card h2 {
+        .login-card h2 {
             color: #a94442;
             font-weight: 700;
             text-align: center;
@@ -44,7 +44,7 @@
             border-radius: 8px;
         }
 
-        .btn-register {
+        .btn-login {
             width: 100%;
             background-color: #a94442;
             color: white;
@@ -55,19 +55,23 @@
             transition: 0.2s;
         }
 
-        .btn-register:hover {
+        .btn-login:hover {
             background-color: #8a3232;
             transform: scale(1.03);
         }
 
-        .login-link {
+        .signup-link {
             margin-top: 15px;
             text-align: center;
         }
 
-        .login-link a {
+        .signup-link a {
             color: #ffffff;
             text-decoration: underline;
+        }
+
+        .signup-link a:hover {
+            color: #ffe1e1;
         }
 
         @keyframes fadeIn {
@@ -79,12 +83,11 @@
 
 <body class="bg-blur">
 
-<div class="register-container">
-    <div class="register-card">
-        <h2>Create an Account</h2>
+<div class="login-container">
+    <div class="login-card">
+        <h2>Create Account</h2>
 
         <form method="POST" action="/register">
-
             <div class="mb-3">
                 <label>Full Name</label>
                 <input type="text" class="form-control" name="fullname" required>
@@ -105,15 +108,12 @@
                 <input type="password" class="form-control" name="confirm_password" required>
             </div>
 
-            <button class="btn-register" type="button" onclick="window.location.href='/login'">
-    Register
-</button>
-
+            <button class="btn-login" type="submit">Register</button>
         </form>
 
-        <div class="login-link">
-            Already have an account?  
-            <a href="/login">Login here</a>
+        <div class="signup-link">
+            Already have an account?
+            <a href="/login">Login</a>
         </div>
     </div>
 </div>
