@@ -107,7 +107,7 @@ body {
 
 /* INDIVIDUAL TASK ITEM */
 .task-item { display: flex; justify-content: space-between; gap: 12px; padding: 10px; border-radius: 10px; background: rgba(255,255,255,0.02); margin-bottom: 10px; align-items: center; }
-.task-meta { color: #ddd; font-size: 0.9rem; }
+.task-meta { color: #000000; font-size: 0.9rem; }
 .task-actions a { margin-left: 6px; }
 
 /* FORMS */
@@ -120,28 +120,25 @@ input, select { border-radius: 6px; }
     .main-area { padding: 14px; }
 }
 
-/* -----------------------------------------
-   DASHBOARD — MATCH INTRO PAGE AESTHETIC
-------------------------------------------*/
+/* ------------
+  DASHBOARD 
+---------------*/
 
 /* Dashboard background */
 .dashboard-bg {
-    background: url('/static/bsu.jpg') no-repeat center center fixed;
-    background-size: cover;
-    position: static;
-    min-height: 100vh;
-}
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.70),
+            rgba(255, 255, 255, 0.70)
+        ),
+        url("/static/bsu.jpg");
 
-/* Soft red transparent overlay */
-.dashboard-bg::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(150, 40, 40, 0.35);
-    backdrop-filter: blur(2px);
-    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    backdrop-filter: blur(4px);    /* This adds the blur */
+    min-height: 100vh;
 }
 
 /* Make dashboard content visible above overlay */
@@ -149,7 +146,7 @@ input, select { border-radius: 6px; }
 
 /* Glass cards */
 .stat-card, .tasks-card, .add-task-card {
-    background: rgba(255,255,255,0.2) !important;
+    background: white !important;
     backdrop-filter: blur(20px);
 }
 
@@ -165,3 +162,19 @@ input, select { border-radius: 6px; }
         margin-top: 20px;
     }
 }
+
+.bg-blur {
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.65),
+            rgba(255, 255, 255, 0.65)
+        ),
+        url("/static/bsu.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    backdrop-filter: blur(4px);
+    min-height: 100vh;
+    width: 100%;
+}
+
