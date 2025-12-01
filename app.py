@@ -113,6 +113,10 @@ def dashboard():
         {"message": "Small steps every day still move you forward."},
         {"message": "Your feelings are valid."},
         {"message": "Breathe. You’re doing your best."},
+        {"message": "You’ve survived every hard day so far—you can handle this one too."},
+        {'message': "Small victories count. Celebrate them."},
+        {'message': "Your mental health matters more than the expectations of others."},
+        {'message': "It’s okay to feel lost. Healing often begins in the dark."},
     ]
 
     return render_template(
